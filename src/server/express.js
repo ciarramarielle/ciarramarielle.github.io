@@ -11,13 +11,11 @@ module.exports = function(app, config) {
     })); // enable url-encoded bodies
     app.use(bodyParser.json()); //enable json-encoded bodies
 
-    // Static routing for anything inside .(server)/..(mean_start)/public/
-    //      i.e. public/index.html
-    app.use(express.static(config.rootPath + "/public"));
+    // Static routing for anything inside <root=src>/client
+    app.use(express.static(config.rootPath + "/client"));
 
-    // Set expreexitss "views" directory
-    //  Right now, <views> = /public/views/
-    app.set('views', config.rootPath+ '/public/views');
+    // Set express <views> = <root=src>/client
+    app.set('views', config.rootPath+ 'client');
 
 
     app.engine('html', require('ejs').renderFile);
