@@ -1,7 +1,7 @@
 # mean_template
 
-After cloning...
----
+###After cloning...
+
 ```
 npm init
 npm install
