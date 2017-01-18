@@ -21,14 +21,12 @@ bower install jquery angular angular-route angular-sanitize bootstrap --save
 node server.js
 ```
 ##### To run on Firefox
-> Open browser at <host>:8080/
+> Open browser at localhost:8080/
 
 ##### [DRAFT] To run on Chrome for dev purposes:
-Chrome does not support CORS
-
+> Chrome does not support CORS (cannot get 3rd party API results thru localhost). As a workaround, this will disable web security for that instance of Chrome.
 ```
 "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 --user-data-dir="C:/Chrome dev session2" --disable-web-security
 ```
 
-> This will disable web security for that instance of Chrome.
