@@ -20,15 +20,27 @@ module.exports = function(app, config) {
     // Set express <views> = <root=mean_start>/src/client
     app.set('views', config.rootPath+ 'src/client');
 
-
-    app.engine('html', require('ejs').renderFile);
-
     // Set express "view engine"
     app.set('view engine', 'html');
+    app.engine('html', require('ejs').renderFile);
+
+
+    // Home / --> index.html
+    app.get("/", function(req, res) {
+        res.render("index.html");
+        // looks inside VIEWS
+    });
+
+    // *** TESTING *** //
+    // /ping --> pong
+    // app.get('/ping', function(req, res, next) {
+    //     console.log(req.body);
+    //     res.send('pong');
+    // });
 
     // For now, route everything to <views>/index.html
     app.get("*", function(req, res) {
-        res.render("index.html");
+        res.render("/app/layout/topnav.html");
         // looks inside VIEWS
     });
 };
