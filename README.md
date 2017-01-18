@@ -12,7 +12,7 @@ npm install -g express body-parser path ejs bower
 
 ```
 bower init
-bower install jquery angular bootstrap --save
+bower install jquery angular angular-route bootstrap --save
 ```
 
 > creates bower_components/, --save: saves into bower.json
