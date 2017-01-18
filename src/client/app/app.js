@@ -11,7 +11,7 @@ angular
             .when("/", {
                 templateUrl: "app/feature1/hello.html"
             })
-            .when("/other", {
+            .when("/other/", {
                 templateUrl: "app/feature2/other.html",
                 controller: "OtherCtrl"
             });

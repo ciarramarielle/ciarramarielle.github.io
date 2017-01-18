@@ -1,6 +1,6 @@
 # mean_template
 
-###After cloning...
+### After cloning...
 
 ```
 npm init
@@ -20,6 +20,14 @@ bower install jquery angular angular-route bootstrap --save
 ```
 node server.js
 ```
+##### To run on Firefox
+> Open browser at <host>:8080/
 
-> Then open browser at <host>:8080/
+##### [DRAFT] To run on Chrome for dev purposes:
 
+```
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+--user-data-dir="C:/Chrome dev session2" --disable-web-security
+```
+
+> This will disable web security for that instance of Chrome.

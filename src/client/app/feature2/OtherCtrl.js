@@ -4,8 +4,14 @@ angular
     .controller('OtherCtrl', OtherCtrl);
 
 
-function OtherCtrl($scope) {
+function OtherCtrl($scope, dataService) {
+    // $route.reload();
+
     var vm = this;
     vm.other_message = 'This is the other_message!';
-    console.log("OtherCtrl getting invoked")
+
+    var quote = dataService.getQuote();
+    quote.then(function(data) {
+        vm.quote= data[0]["content"];
+    });
 }
