@@ -12,7 +12,7 @@ npm install -g express body-parser path ejs bower
 
 ```
 bower init
-bower install jquery angular angular-route bootstrap --save
+bower install jquery angular angular-route angular-sanitize bootstrap --save
 ```
 
 > creates bower_components/, --save: saves into bower.json
@@ -24,6 +24,7 @@ node server.js
 > Open browser at <host>:8080/
 
 ##### [DRAFT] To run on Chrome for dev purposes:
+Chrome does not support CORS
 
 ```
 "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"

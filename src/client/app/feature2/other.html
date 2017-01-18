@@ -1,5 +1,6 @@
 <div ng-controller="OtherCtrl as other" class="jumbotron">
     <h1>Hello other-world!</h1>
     {{ other.other_message }}
-    {{ other.quote }}
+    <!--{{ other.quote }}-->
+    <span ng-bind-html="other.quote"></span>
 </div>

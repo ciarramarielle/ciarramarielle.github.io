@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('app', ['ngRoute'])
+    .module('app', ['ngRoute', 'ngSanitize'])
     .config(function ($routeProvider, $locationProvider) {
         // This is routing WITHIN ng-view only.
         //      Paths are relative to <views> (config in express.js)
