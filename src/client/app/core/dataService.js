@@ -7,6 +7,7 @@
     // @ngInject ???
     function dataService($http) {
 
+        // Get random quote from free QuotesOnDesign API
         function getQuote() {
 
             var url = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
@@ -22,8 +23,16 @@
                     console.log("XHR failed for getQuote");
             }
         }
+
+        // Get random image from free Unsplash.it API
+        function getRandomImageSource(imgWidth, imgHeight) {
+            // Assumes stable API... no error checking right now
+            return "https://unsplash.it/"+(imgWidth-200)+"/"+imgHeight+"/?random";
+
+        }
         return {
-            getQuote: getQuote
+            getQuote: getQuote,
+            getRandomImageSource: getRandomImageSource
         }
     }
 })();

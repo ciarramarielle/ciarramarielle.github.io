@@ -14,4 +14,8 @@ function OtherCtrl($scope, dataService) {
     quote.then(function(data) {
         vm.quote= data[0]["content"];
     });
+
+    // var windowWidth = $(window).width();
+    var windowWidth = angular.element(document.getElementById("otherJumbotron")).offsetWidth;
+    vm.imageSrc = dataService.getRandomImageSource(windowWidth, 300);
 }

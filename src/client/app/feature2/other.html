@@ -1,6 +1,8 @@
-<div ng-controller="OtherCtrl as other" class="jumbotron">
-    <h1>Hello other-world!</h1>
+<div ng-controller="OtherCtrl as other" class="container">
+    <div class="jumbotron" id="otherJumbotron"><h1>Hello other-world!</h1></div>
     {{ other.other_message }}
     <!--{{ other.quote }}-->
     <span ng-bind-html="other.quote"></span>
+    <img src="" ng-src="{{ other.imageSrc }}" />
+    <!--{{ other.imageSrc }}-->
 </div>
