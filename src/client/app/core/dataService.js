@@ -27,7 +27,7 @@
         // Get random image from free Unsplash.it API
         function getRandomImageSource(imgWidth, imgHeight) {
             // Assumes stable API... no error checking right now
-            return "https://unsplash.it/"+(imgWidth-200)+"/"+imgHeight+"/?random";
+            return "https://unsplash.it/"+imgWidth+"/"+imgHeight+"/?random";
 
         }
         return {
