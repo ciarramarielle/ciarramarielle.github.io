@@ -5,7 +5,7 @@
 ```
 npm init
 npm install
-npm install -g express body-parser path ejs bower
+npm install express body-parser path ejs bower --save
 ```
 
 > creates node_modules, -g: global
