@@ -11,5 +11,5 @@ var config = require("./src/server/config.js")[env];
 require("./src/server/express.js")(app, config);
 
 // Start NodeJS on configured port
-app.listen(config.port, '0.0.0.0');
+app.listen(config.port, '0.0.0.0'); // 0.0.0.0 to allow any IP.
 console.log("Listening on port " + config.port);
