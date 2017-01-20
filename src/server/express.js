@@ -34,7 +34,7 @@ module.exports = function(app, config) {
 
     // For now, route everything to <views>/index.html
     app.get("*", function(req, res) {
-        res.render("/app/layout/topnav.html");
+        res.render("index.html");
         // looks inside VIEWS
     });
 };
