@@ -4,8 +4,10 @@
 var express = require("express");
 var app = express();
 
-// Configure ExpressJS
-var config = require("./src/server/config.js");
+// Configure ExpressJS depeding on the env (NodeJS)
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+var config = require("./src/server/config.js")[env];
 require("./src/server/express.js")(app, config);
 
 // Start NodeJS on configured port
