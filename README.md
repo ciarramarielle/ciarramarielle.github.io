@@ -30,3 +30,7 @@ node server.js
 --user-data-dir="C:/Chrome dev session2" --disable-web-security
 ```
 
+##### TO-DO
+1. Add ng-cloak into custom css.
+2. Fix image loading.
+3. Make able to load to Chrome.

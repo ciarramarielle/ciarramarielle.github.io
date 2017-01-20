@@ -1,6 +1,6 @@
-<div ng-controller="OtherCtrl as other" class="jumbotron">
-    <h1>Hello other-world!</h1>
-    {{ other.other_message }}
-    <!--{{ other.quote }}-->
-    <span ng-bind-html="other.quote"></span>
+<div ng-cloak ng-controller="OtherCtrl as other" class="container-fluid" style="margin-top: 10%;">
+    <img src="" ng-src="{{ other.imageSrc }}" />
+    <div class="jumbotron" id="otherJumbotron" ng-show="other.quote">
+        <h1 ng-bind-html="other.quote" style="font-family: 'Special Elite', sans-serif"></h1>
+    </div>
 </div>

@@ -17,6 +17,13 @@ module.exports = function(app, config) {
     // Static routing for anything inside <root=mean_start>/bower_components into bower_components/
     app.use('/bower_components', express.static(config.rootPath + "bower_components"));
 
+    // enable-cors.org's code for EXPRESSJS CORS 
+	app.use(function(req, res, next) {
+	  res.header("Access-Control-Allow-Origin", "*");
+	  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	  next();
+	});
+
     // Set express <views> = <root=mean_start>/src/client
     app.set('views', config.rootPath+ 'src/client');
 

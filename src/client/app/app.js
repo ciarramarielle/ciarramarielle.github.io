@@ -14,5 +14,8 @@ angular
             .when("/other/", {
                 templateUrl: "app/feature2/other.html",
                 controller: "OtherCtrl"
-            });
+            })
+	    .when("/resume/", {
+	    	templateUrl: "app/resume/resume.html"
+	    })
     });
