@@ -9,5 +9,5 @@ var config = require("./src/server/config.js");
 require("./src/server/express.js")(app, config);
 
 // Start NodeJS on configured port
-app.listen(config.port);
+app.listen(config.port, '0.0.0.0');
 console.log("Listening on port " + config.port);
