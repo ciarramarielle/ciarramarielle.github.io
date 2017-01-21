@@ -20,7 +20,7 @@ bower install jquery angular angular-route angular-sanitize bootstrap --save
 ```
 node server.js
 ```
-##### To run on Firefox
+##### To run on Firefox in dev mode...
 > Open browser at localhost:8080/
 
 ##### [DRAFT] To run on Chrome for dev purposes:

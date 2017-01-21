@@ -10,18 +10,21 @@
         // Get random quote from free QuotesOnDesign API
         function getQuote() {
 
-            var url = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
-            // 'https://api.github.com/users/angularjs'
+            // var url = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";//&_jsonp=mycallback";
+            var url = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=";
+
             return $http.get(url)
                 .then(getQuoteComplete, getQuoteFail);
 
-            function getQuoteComplete(data, status, headers, config) {
-                return data.data;
+            function getQuoteComplete(data) { //}, status, headers, config, response) {
+                return (data.data).slice(6, (data.data).length-2);
             }
 
             function getQuoteFail(message) {
-                    console.log("XHR failed for getQuote");
+                    console.log("XHR failed for getQuote ", message);
+                    return "Quote was not found but imagine this text is SO inspirational...";
             }
+
         }
 
         // Get random image from free Unsplash.it API
