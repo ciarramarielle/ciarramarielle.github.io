@@ -11,7 +11,7 @@
         function getQuote() {
 
             // var url = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";//&_jsonp=mycallback";
-            var url = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=";
+            var url = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=";
 
             return $http.get(url)
                 .then(getQuoteComplete, getQuoteFail);
@@ -21,7 +21,7 @@
             }
 
             function getQuoteFail(message) {
-                    console.log("XHR failed for getQuote ", message);
+                    console.log("XHR failed for getQuote ");
                     return "Quote was not found but imagine this text is SO inspirational...";
             }
 
