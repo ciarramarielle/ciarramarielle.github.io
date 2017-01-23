@@ -7,10 +7,12 @@ var rootPath = path.normalize(__dirname +"/../../");
 module.exports ={
     development: {
         rootPath: rootPath,
-        port: process.env.PORT || 8080
+        port: process.env.PORT || 8080,
+        host: process.env.HOST || "localhost"
     },
     production: {
         rootPath: rootPath,
-        port: process.env.PORT || 80
+        port: process.env.PORT || 80,
+        host: process.env.HOST || "https://powerful-harbor-68074.herokuapp.com/"
     }
 }

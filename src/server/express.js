@@ -33,7 +33,7 @@ module.exports = function(app, config) {
     // });
     app.options('/other', function(req, res){
         console.log("writing headers only");
-        res.header("Access-Control-Allow-Origin", "https://powerful-harbor-68074.herokuapp.com/");
+        res.header("Access-Control-Allow-Origin", config.host );
         res.end('');
     });
 
