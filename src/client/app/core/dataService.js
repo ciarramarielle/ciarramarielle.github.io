@@ -2,7 +2,10 @@
     'use strict';
     angular
         .module("app")
-        .factory("dataService", dataService);
+        .factory("dataService", dataService)
+        .config(['$httpProvider', function($httpProvider) {
+            delete $httpProvider.defaults.headers.common["X-Requested-With"]
+        }]);
 
     // @ngInject ???
     function dataService($http) {
