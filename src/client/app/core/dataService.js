@@ -51,6 +51,9 @@
             work: {
                 job1: {
                     employer: "Employer"
+                },
+                job2: {
+                    employer: "Employer 2"
                 }
             }
 		}

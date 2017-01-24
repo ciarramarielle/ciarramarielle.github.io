@@ -9,11 +9,11 @@ angular
         $locationProvider.html5Mode(true);
         $routeProvider
             .when("/", {
-                templateUrl: "app/feature1/hello.html"
+                templateUrl: "app/home/home.html"
             })
-            .when("/other/", {
-                templateUrl: "app/feature2/other.html",
-                controller: "OtherCtrl"
+            .when("/random/", {
+                templateUrl: "app/randomQuoteImage/randomQuoteImage.html",
+                controller: "RandomQuoteImageCtrl"
             })
 	    .when("/resume/", {
 	    	templateUrl: "app/resume/resume.html"

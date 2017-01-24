@@ -1,10 +1,10 @@
 'use strict';
 angular
     .module("app")
-    .controller('OtherCtrl', OtherCtrl);
+    .controller('RandomQuoteImageCtrl', RandomQuoteImageCtrl);
 
 
-function OtherCtrl($scope, dataService, $window) {
+function RandomQuoteImageCtrl($scope, dataService, $window) {
     // $route.reload();
 
     var vm = this;
@@ -19,7 +19,7 @@ function OtherCtrl($scope, dataService, $window) {
                 // vm.quote= adata["content"];
                 var quote= adata["content"];
 
-                var windowWidth = angular.element(document.getElementById("otherJumbotron")).prop("offsetWidth")/3;
+                var windowWidth = angular.element(document.getElementById("RQIJumbotron")).prop("offsetWidth")/3;
                 var windowHeight = 200* (Math.random() + Math.ceil(i, 2));
                 var imageSrc = dataService.getRandomImageSource(windowWidth, windowHeight);
 
@@ -30,7 +30,7 @@ function OtherCtrl($scope, dataService, $window) {
 
 
     }
-    // var windowWidth = angular.element(document.getElementById("otherJumbotron")).prop("offsetWidth");
-    // var windowHeight = angular.element(document.getElementById("otherJumbotron")).prop("clientHeight") * (Math.random() + 2);
+    // var windowWidth = angular.element(document.getElementById("RQIJumbotron")).prop("offsetWidth");
+    // var windowHeight = angular.element(document.getElementById("RQIJumbotron")).prop("clientHeight") * (Math.random() + 2);
     // vm.imageSrc = dataService.getRandomImageSource(100, 100);
 }

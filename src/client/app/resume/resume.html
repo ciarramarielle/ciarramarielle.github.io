@@ -1,26 +1,33 @@
 <div ng-controller="ResumeCtrl as rc" class="container" style="margin-top:5%;">
 	<!-- Maybe should put this into a directive-->
 	<div class="well">
-		<table class="table">
+		<table class="table table-condensed" style="border-top: none !important;">
 			<tr ng-repeat="(key, value) in rc.resumeData['basic']">
-				<td> {{ key }} </td> 
-				<td> {{ value }}</td>
+				<!--Sizing may be applied to thead only, all td will follow-->
+				<td  class="col-md-2"><strong>{{ key }}</strong></td>
+				<td  class="col-md-9"> {{ value }}</td>
 			</tr>
 		</table>
 	</div>
 	<div class="well">
-		<table class="table">
+		<table class="table table-condensed">
 			<tr ng-repeat="(key, value) in rc.resumeData['education']">
-				<td> {{ key }} </td>
-				<td> {{ value }}</td>
+				<!--Sizing may be applied to thead only, all td will follow-->
+				<td  class="col-md-2"><strong>{{ key }}</strong></td>
+				<td class="col-md-9"> {{ value }}</td>
 			</tr>
 		</table>
 	</div>
 	<div class="well">
-		<table class="table">
-			<tr ng-repeat="(key, value) in rc.resumeData['work']">
-				<td> {{ key }} </td>
-				<td> {{ value }}</td>
+		<table class="table table-condensed" ng-repeat="job in rc.resumeData['work']">
+			<!--Sizing may be applied to thead only, all td will follow-->
+			<!--<thead>--> <!-- Maybe use this for Job Position -->
+				<!--<td>{{ job }}</td>-->
+				<!--<td>A</td>-->
+			<!--</thead>-->
+			<tr ng-repeat="(key, value) in job">
+				<td  class="col-md-2"><strong>{{ key }}</strong></td>
+				<td class="col-md-9"> {{ value }}</td>
 			</tr>
 		</table>
 	</div>

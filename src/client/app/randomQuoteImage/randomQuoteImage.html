@@ -1,9 +1,9 @@
-<div ng-cloak ng-controller="OtherCtrl as other" class="container-fluid" style="margin-top: 5%;">
-    <!--<img src="" ng-src="{{ other.imageSrc }}" />-->
+<div ng-cloak ng-controller="RandomQuoteImageCtrl as RQI" class="container-fluid" style="margin-top: 5%;">
+    <!--<img src="" ng-src="{{ RQI.imageSrc }}" />-->
 
-    <div class="row col-sm-12" id="otherJumbotron">
+    <div class="row col-sm-12" id="RQIJumbotron">
         <!--<div >-->
-            <div class="col-sm-4" ng-repeat="quote in other.listOfQuotes">
+            <div class="col-sm-4" ng-repeat="quote in RQI.listOfQuotes">
                 <div class="col-sm-12 thumbnail text-center">
                     <img alt="" class="img-responsive" ng-src="{{ quote.imageSrc }}">
 
