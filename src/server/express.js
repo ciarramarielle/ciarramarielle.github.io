@@ -11,6 +11,7 @@ module.exports = function(app, config) {
     })); // enable url-encoded bodies
     app.use(bodyParser.json()); //enable json-encoded bodies
 
+    // To enable CORS... this only works on DEV environment currently. :(
     var allowCrossDomain = function(req, res, next) {
         res.header('Access-Control-Allow-Origin', "*");
         res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -19,14 +20,6 @@ module.exports = function(app, config) {
     }
 
     app.use(allowCrossDomain);
-
-    // app.options('/other', function(req, res){
-    //     console.log("writing headers only");
-    //     res.header("Access-Control-Allow-Origin", config.host );
-    //     res.end('');
-    // });
-
-
 
     // Static routing for anything inside <root=mean_start>/src/client into /
     app.use(express.static(config.rootPath + "src/client"));

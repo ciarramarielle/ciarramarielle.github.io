@@ -20,6 +20,8 @@
                 .then(getQuoteComplete, getQuoteFail);
 
             function getQuoteComplete(data) { //}, status, headers, config, response) {
+                // This string manipulation on data.data removes the /**/myCallbackFn( ... )
+                //  from the jsonp. This is to bypass CORS issue. Only works for DEV.
                 return (data.data).slice(6, (data.data).length-2);
             }
 

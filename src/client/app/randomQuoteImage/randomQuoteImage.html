@@ -3,12 +3,12 @@
 
     <div class="row col-sm-12" id="RQIJumbotron">
         <!--<div >-->
-            <div class="col-sm-4" ng-repeat="quote in RQI.listOfQuotes">
+            <div class="col-sm-4" ng-repeat="RQI_pair in RQI.listOfQuotes">
                 <div class="col-sm-12 thumbnail text-center">
-                    <img alt="" class="img-responsive" ng-src="{{ quote.imageSrc }}">
+                    <img alt="" class="img-responsive" ng-src="{{ RQI_pair.imageSrc }}">
 
                     <div class="caption">
-                        <h4 ng-bind-html="quote.q">_</h4>
+                        <h4 ng-bind-html="RQI_pair.quote">_</h4>
                     </div>
                 </div>
             </div>

@@ -5,32 +5,24 @@ angular
 
 
 function RandomQuoteImageCtrl($scope, dataService, $window) {
-    // $route.reload();
-
     var vm = this;
 
     // vm.quote =
     vm.listOfQuotes = [];
-    for (var i=0; i < 3; ++i) {
+    var NUMBER_TO_GEN = 3;
+    for (var i=0; i < NUMBER_TO_GEN; ++i) {
         dataService.getQuote().then(
             // on success...
             function(data) {
-                var adata = JSON.parse(data);
-                // vm.quote= adata["content"];
-                var quote= adata["content"];
+                var quote_json = JSON.parse(data); //
+                var quote= quote_json["content"];
 
                 var windowWidth = angular.element(document.getElementById("RQIJumbotron")).prop("offsetWidth")/3;
                 var windowHeight = 200* (Math.random() + Math.ceil(i, 2));
                 var imageSrc = dataService.getRandomImageSource(windowWidth, windowHeight);
 
-                vm.listOfQuotes.push({"id": i, "q": quote, "imageSrc": imageSrc});
+                vm.listOfQuotes.push({"id": i, "quote": quote, "imageSrc": imageSrc});
             }
         )
-
-
-
     }
-    // var windowWidth = angular.element(document.getElementById("RQIJumbotron")).prop("offsetWidth");
-    // var windowHeight = angular.element(document.getElementById("RQIJumbotron")).prop("clientHeight") * (Math.random() + 2);
-    // vm.imageSrc = dataService.getRandomImageSource(100, 100);
 }
