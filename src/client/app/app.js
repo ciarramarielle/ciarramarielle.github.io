@@ -13,7 +13,8 @@ angular
             })
             .when("/random/", {
                 templateUrl: "app/randomQuoteImage/randomQuoteImage.html",
-                controller: "RandomQuoteImageCtrl"
+                controller: "RandomQuoteImageCtrl",
+                controllerAs: "RQI"
             })
 	    .when("/resume/", {
 	    	templateUrl: "app/resume/resume.html"

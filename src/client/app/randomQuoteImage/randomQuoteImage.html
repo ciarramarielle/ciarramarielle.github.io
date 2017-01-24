@@ -1,8 +1,7 @@
-<div ng-cloak ng-controller="RandomQuoteImageCtrl as RQI" class="container-fluid" style="margin-top: 5%;">
-    <!--<img src="" ng-src="{{ RQI.imageSrc }}" />-->
 
+<div ng-cloak class="container-fluid" style="margin-top: 5%;">
+    <!--ng-controller="RandomQuoteImageCtrl as RQI"-->
     <div class="row col-sm-12" id="RQIJumbotron">
-        <!--<div >-->
             <div class="col-sm-4" ng-repeat="RQI_pair in RQI.listOfQuotes">
                 <div class="col-sm-12 thumbnail text-center">
                     <img alt="" class="img-responsive" ng-src="{{ RQI_pair.imageSrc }}">
@@ -12,6 +11,6 @@
                     </div>
                 </div>
             </div>
-        <!--</div>-->
     </div>
 </div>
+
