@@ -63,7 +63,7 @@
 
 
     function getAvengers() {
-        return $http({method: 'GET', url: '/resume'}).
+        return $http({method: 'GET', url: '/api/birds'}).
             then(function(data, status, headers, config) {
                 // this callback will be called asynchronously
                 // when the response is available

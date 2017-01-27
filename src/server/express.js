@@ -55,8 +55,8 @@ module.exports = function(app, config) {
 
 
     // define the about route
-    router.get('/resume', function (req, res) {
-      res.send('About birds')
+    router.get('/api/birds', function (req, res) {
+      res.send('[ { "id": "About birds"}, {"id": "Another one"} ]')
     })
 
     // // For now, route everything to <views>/index.html
@@ -64,6 +64,7 @@ module.exports = function(app, config) {
     //     res.render("index.html");
     //     // looks inside VIEWS
     // });
+    app.use('/', router);
 
     module.exports = router
 

@@ -7,12 +7,13 @@ function ResumeCtrl($scope, dataService) {
 	var vm = this;
 	vm.resumeData = dataService.fakeResumeData();
 
-	vm.birds = dataService.getAvengers()
-            .then(function(data){
-                // vm.avengers = data.data;
-                console.log(data.data);
-                // return vm.selectedAvengers;
-                return data.data;
-            });
-
+	dataService.getAvengers()
+        .then(function(data){
+            // vm.avengers = data.data;
+            // var json = JSON.parse(data.data);
+            var json = data.data;
+            vm.birds = json[0];
+            // return vm.selectedAvengers;
+            return json[0];
+        });
 }

@@ -31,5 +31,18 @@
 			</tr>
 		</table>
 	</div>
+	<div class="well">
+		<table class="table table-condensed">
+			<!--Sizing may be applied to thead only, all td will follow-->
+			<!--<thead>--> <!-- Maybe use this for Job Position -->
+				<!--<td>{{ job }}</td>-->
+				<!--<td>A</td>-->
+			<!--</thead>-->
+			<tr ng-repeat="(key, value) in rc.birds">				
+				<td  class="col-md-2"><strong>{{ key }}</strong></td>
+				<td class="col-md-9"> {{ value }}</td>
+			</tr>
+		</table>
+	</div>
 	{{ rc.birds }}
 </div>
