@@ -3,7 +3,8 @@
 
 // This is where I can configure EXPRESSJS.
 var express = require("express"),
-    bodyParser = require("body-parser");
+    bodyParser = require("body-parser"),
+    router = express.Router();
 
 module.exports = function(app, config) {
     app.use(bodyParser.urlencoded({
@@ -28,9 +29,6 @@ module.exports = function(app, config) {
     app.use('/bower_components', express.static(config.rootPath + "bower_components"));
 
 
-
-
-
     // Set express <views> = <root=mean_start>/src/client
     app.set('views', config.rootPath+ 'src/client');
 
@@ -39,15 +37,34 @@ module.exports = function(app, config) {
     app.engine('html', require('ejs').renderFile);
 
 
-    // Home / --> index.html
-    app.get("/", function(req, res) {
+
+    // app.get('/api/maa', routes);
+    // middleware that is specific to this router
+    router.use(function timeLog (req, res, next) {
+      console.log('Time: ', Date.now())
+      next()
+    })
+    // define the home page route
+    // router.get('/', function (req, res) {
+    //   res.send('Birds home page')
+    // })
+    router.get("/", function(req, res) {
         res.render("index.html");
         // looks inside VIEWS
     });
 
-    // For now, route everything to <views>/index.html
-    app.get("*", function(req, res) {
-        res.render("index.html");
-        // looks inside VIEWS
-    });
+
+    // define the about route
+    router.get('/resume', function (req, res) {
+      res.send('About birds')
+    })
+
+    // // For now, route everything to <views>/index.html
+    // app.get("*", function(req, res) {
+    //     res.render("index.html");
+    //     // looks inside VIEWS
+    // });
+
+    module.exports = router
+
 };
